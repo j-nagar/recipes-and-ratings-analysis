@@ -39,6 +39,19 @@ MAKE EDITS The number of rows in the dataset before cleaning is BLANK, and the n
 
 ## Data Cleaning and Exploratory Data Analysis
 
+```py
+print(counts[['Quarter', 'Count']].head().to_markdown(index=False))
+```
+
+| Quarter     |   Count |
+|:------------|--------:|
+| Fall 2020   |       3 |
+| Winter 2021 |       2 |
+| Spring 2021 |       6 |
+| Summer 2021 |       4 |
+| Fall 2021   |      55 |
+
+
 <iframe src="assets/10-80-enrollment.html" width=800 height=600 frameBorder=0></iframe>
 
 ---
@@ -59,23 +72,12 @@ The **response variable** is calories, which was extracted from the ‘nutrition
   - `carbohydrates`: Carbohydrate content (PDV%).
     
 **Relevance**: The selected features directly relate to key nutritional factors influencing calorie content.
+
 **Availability**: These features are always available at the time of prediction, as they are from a recipe’s nutritional information. The information known at the “time of prediction” include number of ingredients, preparation time, and nutritional components that may correlate with calories.
 
 
 ### Evaluation Metrics
 The evaluation metric is **Mean Squared Error (MSE)**. This was chosen because it penalizes large errors more heavily, it’s commonly used for regression problems, and the square units match people’s intuitive understanding of calorie differences. We will also use **R² Score** as it explains the proportion of variance in calorie count that can be predicted by the selected feature.
-
-```py
-print(counts[['Quarter', 'Count']].head().to_markdown(index=False))
-```
-
-| Quarter     |   Count |
-|:------------|--------:|
-| Fall 2020   |       3 |
-| Winter 2021 |       2 |
-| Spring 2021 |       6 |
-| Summer 2021 |       4 |
-| Fall 2021   |      55 |
 
 ---
 
