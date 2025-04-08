@@ -5,7 +5,7 @@ Final Project for UMich EECS 398 WN 25 using Recipes and Ratings Dataset
 
 ---
 
-# Introduction
+## Introduction
 
 This project analyzes the ‘Recipes and Ratings’ dataset from food.com, which contains information about various recipes along with user ratings and reviews. The dataset used is relevant for people interested in cooking, nutrition, and recipe recommendations. The data comes in two parts:
  1. **Recipes Dataset**: Contains details about recipes, including preparation time, number of ingredients, steps, and nutritional information.
@@ -37,17 +37,19 @@ MAKE EDITS The number of rows in the dataset before cleaning is BLANK, and the n
 
 ---
 
-# Data Cleaning and Exploratory Data Analysis
+## Data Cleaning and Exploratory Data Analysis
 
-## Data Cleaning
+### Data Cleaning
 
-## Univariate Analysis
+#### hello 
 
-## Bivariate Analysis
+### Univariate Analysis
 
-## Interesting Aggregates
+### Bivariate Analysis
 
-## Imputation
+### Interesting Aggregates
+
+### Imputation
 
 
 ```py
@@ -67,7 +69,7 @@ print(counts[['Quarter', 'Count']].head().to_markdown(index=False))
 
 ---
 
-# Framing a Prediction Problem
+## Framing a Prediction Problem
 
 The goal of this analysis is to predict calorie count of recipes based on various features from the dataset. 
 
@@ -92,12 +94,12 @@ The evaluation metric is **Mean Squared Error (MSE)**. This was chosen because i
 
 ---
 
-# Baseline Model
+## Baseline Model
 
 
 ---
 
-# Final Model
+## Final Model
 
 
 ---
