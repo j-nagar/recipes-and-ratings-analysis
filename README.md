@@ -57,13 +57,13 @@ The **response variable** is calories, which was extracted from the ‘nutrition
   - `protein`: Protein content (PDV%).
   - `sugar`: Sugar content (PDV%).
   - `carbohydrates`: Carbohydrate content (PDV%).
-  - 
-- **Relevance**: The selected features directly relate to key nutritional factors influencing calorie content.
-- **Availability**: These features are always available at the time of prediction, as they are from a recipe’s nutritional information. The information known at the “time of prediction” include number of ingredients, preparation time, and nutritional components that may correlate with calories.
+    
+**Relevance**: The selected features directly relate to key nutritional factors influencing calorie content.
+**Availability**: These features are always available at the time of prediction, as they are from a recipe’s nutritional information. The information known at the “time of prediction” include number of ingredients, preparation time, and nutritional components that may correlate with calories.
 
 
 ### Evaluation Metrics
-The evaluation metric is Mean Squared Error (MSE). This was chosen because it penalizes large errors more heavily, it’s commonly used for regression problems, and the square units match people’s intuitive understanding of calorie differences. We will also use **R² Score** as it explains the proportion of variance in calorie count that can be predicted by the selected feature.
+The evaluation metric is **Mean Squared Error (MSE)**. This was chosen because it penalizes large errors more heavily, it’s commonly used for regression problems, and the square units match people’s intuitive understanding of calorie differences. We will also use **R² Score** as it explains the proportion of variance in calorie count that can be predicted by the selected feature.
 
 ```py
 print(counts[['Quarter', 'Count']].head().to_markdown(index=False))
