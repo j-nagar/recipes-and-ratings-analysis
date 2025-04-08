@@ -16,7 +16,7 @@ This project analyzes the ‘Recipes and Ratings’ dataset from food.com, which
 The project is centered around the question: “What types of recipes tend to be healthier, or in other words what types of recipes tend to have a lower calorie count?” This is an important question to evaluate because with increasing awareness about health and nutrition, many people are seeking healthier recipe options to support their lifestyle. Understanding what components relate to a recipe being lower in calories can help individuals make better dietary choices. This analysis aims to identify key recipe factors, such as preparation time, number of ingredients, and nutritional components, that affect the total calorie count of a recipe. 
 
 ### Dataset Information 
-MAKE EDITS The number of rows in the dataset before cleaning is BLANK, and the number of rows in the dataset after cleaning is BLANK. The columns in the dataset that are relevant to the project’s main question are ‘name’ which is the name of the recipe, ‘tags’ which is food.com’s categorical tags for the recipe (such as “vegetarian,” or “low-calorie”), ‘nutrition’ which contains calorie information and other nutritional values, ‘n_steps’ which is the number of steps within a recipe, and ‘description’ which is the user-provided description of the recipe.
+MAKE EDITS The number of rows in the dataset before cleaning is BLANK, and the number of rows in the dataset after cleaning is BLANK.
 
 #### **Recipes Dataset**:
 - **`name`**: Recipe name.
