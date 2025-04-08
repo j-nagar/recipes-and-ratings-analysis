@@ -1,7 +1,7 @@
-# recipes-and-ratings-analysis
-Final Project for UMich EECS 398 WN 25 using Recipes and Ratings Dataset 
-
+# Calorie Counter
 by Jamila Nagarwala and Mehek Gupta (jnagar@umich.edu and mehekgup@umich.edu)
+
+Final Project for UMich EECS 398 WN 25 using Recipes and Ratings Dataset 
 
 ***Note***: If you choose a repo name and title as uninspired as the ones here, I will be quite sad.
 
