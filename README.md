@@ -45,7 +45,25 @@ MAKE EDITS The number of rows in the dataset before cleaning is BLANK, and the n
 
 ## Framing a Prediction Problem
 
-The prediction problem is to predict calorie count of recipes based on various features from the dataset. This is a regression problem because calorie count is a continuous numerical variable, the differences between calorie values can be quantitatively measured, and the goal is to predict precise numerical outcomes. The response variable is calories, which was extracted from the ‘nutrition’ column. This was chosen as the response variable because number of calories in a recipe can be used to answers the initial question about which recipes tend to be healthier. The evaluation metric is Mean Squared Error (MSE). This was chosen because it penalizes large errors more heavily, it’s commonly used for regression problems, and the square units match people’s intuitive understanding of calorie differences. The information known at the “time of prediction” include number of ingredients, preparation time, and nutritional components that may correlate with calories.
+The goal of this analysis is to predict calorie count of recipes based on various features from the dataset. 
+
+### Problem Type
+This is a regression problem since calorie count is a continuous numerical variable, the differences between calorie values can be quantitatively measured, and the goal is to predict precise numerical outcomes. 
+
+### Response Variable/Features
+The **response variable** is calories, which was extracted from the ‘nutrition’ column. This was chosen as the response variable because number of calories in a recipe can be used to answers the initial question about which recipes tend to be healthier. 
+
+**Features**
+  - `protein`: Protein content (PDV%).
+  - `sugar`: Sugar content (PDV%).
+  - `carbohydrates`: Carbohydrate content (PDV%).
+  - 
+- **Relevance**: The selected features directly relate to key nutritional factors influencing calorie content.
+- **Availability**: These features are always available at the time of prediction, as they are from a recipe’s nutritional information. The information known at the “time of prediction” include number of ingredients, preparation time, and nutritional components that may correlate with calories.
+
+
+### Evaluation Metrics
+The evaluation metric is Mean Squared Error (MSE). This was chosen because it penalizes large errors more heavily, it’s commonly used for regression problems, and the square units match people’s intuitive understanding of calorie differences. We will also use **R² Score** as it explains the proportion of variance in calorie count that can be predicted by the selected feature.
 
 ```py
 print(counts[['Quarter', 'Count']].head().to_markdown(index=False))
