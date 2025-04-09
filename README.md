@@ -41,9 +41,9 @@ The number of rows in the dataset is 231637, the number of columns before cleani
 
 ### Data Cleaning
 
-#### hello 
-
 ### Univariate Analysis
+
+Distribution of Calories
 
  <iframe
  src="assets/calorie-dist.html"
@@ -51,6 +51,9 @@ The number of rows in the dataset is 231637, the number of columns before cleani
  height="600"
  frameborder="0"
  ></iframe>
+
+
+Distribution of Protein
 
  <iframe
  src="assets/protein-dist.html"
@@ -61,6 +64,8 @@ The number of rows in the dataset is 231637, the number of columns before cleani
 
 ### Bivariate Analysis
 
+Distribution of Calories by the Number of Ingredients
+
  <iframe
  src="assets/calorie-dist-by-num-ingredients.html"
  width="800"
@@ -68,12 +73,18 @@ The number of rows in the dataset is 231637, the number of columns before cleani
  frameborder="0"
  ></iframe>
 
+
+Distribution of Saturated Fat by Calories
+
  <iframe
  src="assets/satfat-dist-by-calories"
  width="800"
  height="600"
  frameborder="0"
  ></iframe>
+
+
+Distribution of Carbohydrates Fat by Calories
 
  <iframe
  src="assets/carbs-dist-by-calories"
