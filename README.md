@@ -91,8 +91,7 @@ This histogram, which shows the distribution of the protein amount by PDV across
  frameborder="0"
  ></iframe>
 
-ADD DETAIL This box plot examines the relationship between calorie count and the number of ingredients. We observe FILL IN. This suggests that ingredient count isn’t an ideal predictor of calorie content in a recipe.
-
+This box plot, which shows the distribution of the number of ingredients across all recipes that are 20 ingredients or lower by the number of calories across all recipes that are 3000 calories or lower, in order to eliminate extreme outliers, shows a trend: recipes with higher ingredient counts generally have higher calorie content.
 
 **Distribution of Saturated Fat by Calories**
 
@@ -112,7 +111,7 @@ The scatter plot illustrates the distribution of saturated fat (PDV) by calories
  frameborder="0"
  ></iframe>
 
-The box plot is used to address the overplotting issue observed in the scatter plot and displays the distribution of saturated fat (PDV) across different calorie ranges. The graph shows a clear trend: recipes with higher calorie counts generally have higher saturated fat values.
+The box plot is used to address the overplotting issue observed in the scatter plot and displays the distribution of saturated fat (PDV) across different calorie ranges, filtered so that only recipes that are 3000 calories or lower, in order to eliminate extreme outliers, are considered. The graph shows a trend: recipes with higher calorie counts generally have higher saturated fat values.
 
 ### Interesting Aggregates
 
