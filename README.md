@@ -160,6 +160,46 @@ The evaluation metric is **Mean Squared Error (MSE)**. This was chosen because i
 
 ## Baseline Model
 
+### Model Description 
+The baseline model is a Linear Regression model that predicts the calorie content of a recipe based on two quantitative features that are directly related to calories: protein content (PDV) and number of ingredients. 
+
+### Features
+1. **Quantitative Features**:
+   - `protein (PDV)`: Protein content in Percent Daily Value (PDV%).
+   - `number of ingredients`: the number of ingredients in the recipe.
+   - Protein is a quantiatvie continuous feature, while number of ingredients is a quantitative discrete feature. 
+   - Both features are numerical, therefore they require no special encoding but required standardization. Both feature weere standardized
+     using `StandardScaler` to make the values comparable, as linear regression models are sensitive to the magnitude of features.
+
+2. **Ordinal Features**:
+   - N/A
+
+3. **Nominal Features**:
+   - N/A
+
+4. **Response Variable**:
+   - `calories`: Calorie content, the response variable, measured as a continuous quantitative value.
+  
+### Model Performance
+
+1. **Mean Squared Error (MSE)**:
+   - Train MSE: **93680.658**
+   - Test MSE: **93217.755**
+   - **Interpretation**: The model’s predictions deviate significantly from actual calorie values, indicating that this simple model struggles to capture the variance in calorie content.
+
+2. **R² Score (Coefficient of Determination)**:
+   - Train R²: **0.3656**
+   - Test R²: **0.3749**
+   - **Interpretation**: The model explains only ~48% of the variance in calorie values, leaving over half of the variance unexplained.
+
+### Is This a Good Baseline Model?
+
+This is a **poor baseline model**, as it underperforms in both explanatory power (R²) and prediction accuracy (high RMSE). The low R² score suggests that the features chosen (`sugar` and `sodium`) are insufficient to predict calories effectively on their own.
+
+However, as a baseline model, it provides:
+- A **starting point** for improvement.
+- A **benchmark** against which more complex models can be evaluated.
+
 
 ---
 
