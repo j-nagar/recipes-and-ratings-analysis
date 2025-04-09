@@ -185,21 +185,18 @@ The baseline model is a Linear Regression model that predicts the calorie conten
 1. **Mean Squared Error (MSE)**:
    - Train MSE: **93680.658**
    - Test MSE: **93217.755**
-   - **Interpretation**: The model’s predictions deviate significantly from actual calorie values, indicating that this simple model struggles to capture the variance in calorie content.
+     
+   - **Interpretation**: The model's predictions differ significantly from the actual calorie values, suggesting that this basic model has difficulty accounting for the variability in calorie content.
 
 2. **R² Score (Coefficient of Determination)**:
    - Train R²: **0.3656**
    - Test R²: **0.3749**
-   - **Interpretation**: The model explains only ~48% of the variance in calorie values, leaving over half of the variance unexplained.
+  
+   - **Interpretation**: The model explains only ~37% of the variance in calorie values.
 
 ### Is This a Good Baseline Model?
 
-This is a **poor baseline model**, as it underperforms in both explanatory power (R²) and prediction accuracy (high RMSE). The low R² score suggests that the features chosen (`sugar` and `sodium`) are insufficient to predict calories effectively on their own.
-
-However, as a baseline model, it provides:
-- A **starting point** for improvement.
-- A **benchmark** against which more complex models can be evaluated.
-
+This is a **poor baseline model**, as it has a low explantory power (low R² score) and prediction accuracy (high MSE). The low R² score suggests that the features chosen (`protein` and `number of ingredients`) are insufficient to predict calories effectively on their own.
 
 ---
 
