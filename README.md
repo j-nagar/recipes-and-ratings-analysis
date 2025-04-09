@@ -43,6 +43,10 @@ The number of rows in the dataset is 231637, the number of columns before cleani
 
 To clean the data, first the recipes and interactions datasets were merged using a left merge. Then, the ratings of ‘0’ were replaced with NaN, since the rating scale was from 1 to 5, and the ratings of ‘0’ were likely missing data. Next, nutritional information was extracted from the ‘nutrition’ column into separate columns for calories, fat, sugar, sodium, protein, etc. Then, the average ratings per recipe was calculated and added as a new column to the dataframe. The missing values were handled but not imputing them since there was no accurate and reliable way to estimate them. 
 
+```py
+printrecipes.head().to_markdown(index=False))
+```
+
 | name                                       |     id |   minutes | nutrition                                  |   n_steps | ingredients                                                                                                                                                                                       |   n_ingredients |   average_rating |   calories (#) |   total_fat (PDV) |   sugar (PDV) |   sodium (PDV) |   protein (PDV) |   saturated_fat (PDV) |   carbohydrates (PDV) |
 |:-------------------------------------------|-------:|----------:|:-------------------------------------------|----------:|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------:|-----------------:|---------------:|------------------:|--------------:|---------------:|----------------:|----------------------:|----------------------:|
 | arriba   baked winter squash mexican style | 137739 |        55 | [51.5, 0.0, 13.0, 0.0, 2.0, 0.0, 4.0]      |        11 | ['winter squash', 'mexican seasoning', 'mixed spice', 'honey', 'butter', 'olive oil', 'salt']                                                                                                     |               7 |          5       |           51.5 |                 0 |            13 |              0 |               2 |                     0 |                     4 |
@@ -126,20 +130,6 @@ This pivot table shows average calorie counts grouped by recipe tags. We can see
 ### Imputation
 
 Missing rating values were not imputed because the ratings of ‘0’ were invalid due to the rating scale being 1-5, there was no reliable way to estimate missing ratings, and the missing ratings were likely missing at random. So these recipes didn’t skew the analysis, ratings of ‘0’ were imputed with NaN.
-```py
-print(counts[['Quarter', 'Count']].head().to_markdown(index=False))
-```
-
-| Quarter     |   Count |
-|:------------|--------:|
-| Fall 2020   |       3 |
-| Winter 2021 |       2 |
-| Spring 2021 |       6 |
-| Summer 2021 |       4 |
-| Fall 2021   |      55 |
-
-
-<iframe src="assets/10-80-enrollment.html" width=800 height=600 frameBorder=0></iframe>
 
 ---
 
