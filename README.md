@@ -66,7 +66,7 @@ Distribution of Calories
  frameborder="0"
  ></iframe>
 
-ADD DETAIL This histogram shows the distribution of the number of calories across all recipes. It can be seen that most recipes fall in the 0 to 500 calories, with the histogram having a right skew. This helps us understand what is relatively considered a “low-calorie” recipe in terms of this dataset.
+This histogram, which shows the distribution of the number of calories across all recipes that are 3000 calories or lower, in order to eliminate extreme outliers, stipulates that the majority of the recipes fall in the 0 to 500 calories range, with a peak at around 150 to 170 calories. This right skewed distribution indicates that while most recipes are moderately low in calories, there still exists a long tail of higher calorie recipes, which helps us understand what is considered a relatively “low-calorie” recipe in terms of this dataset.
 
 
 Distribution of Protein
@@ -94,18 +94,17 @@ ADD DETAIL This box plot examines the relationship between calorie count and the
 
 Distribution of Saturated Fat by Calories
 
- <iframe
- src="assests/satfat-dist-by-calories"
+<iframe
+ src="assests/satfat-dist-by-calories-scatter.html"
  width="800"
  height="600"
  frameborder="0"
  ></iframe>
 
+The scatter plot illustrates the distribution of saturated fat (PDV) by calories, using a filtered recipe dataset that only recipes that are 3000 calories or lower, in order to eliminate extreme outliers. The plot suffers from overplotting, since there are so many points are on top of one another making it hard to see the general trend.
 
-Distribution of Carbohydrates Fat by Calories
-
- <iframe
- src="assests/carbs-dist-by-calories"
+<iframe
+ src="assests/satfat-dist-by-calories.html"
  width="800"
  height="600"
  frameborder="0"
