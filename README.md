@@ -127,7 +127,6 @@ print(pivot_table.to_markdown(index=False))
 | 10-19              |        539.225 |               17.2994 |         42.5371 |        33.448  |       83.6886 |           41.2413 |
 | 20-29              |        720.483 |               20.7042 |         65.8122 |        55.4133 |       86.0834 |           57.2432 |
 | 30-39              |       1342.26  |               36.3148 |         99.7037 |       147.667  |      162.593  |          122.648  |
-| 40-49              |        810.333 |               20      |        113.333  |        40.3333 |      124      |           56.3333 |
 
 This pivot table shows average calorie counts grouped by recipe tags. We can see that recipes tagged as TAG1 tend to have HIGHERorLOWER calories than those tagged as TAG2. This helps identify which types of recipes are generally healthier when targeting weight loss.
 
