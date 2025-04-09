@@ -123,11 +123,11 @@ print(pivot_table.to_markdown(index=False))
 
 | ingredient_range   |   calories (#) |   carbohydrates (PDV) |   protein (PDV) |   sodium (PDV) |   sugar (PDV) |   total_fat (PDV) |
 |:-------------------|---------------:|----------------------:|----------------:|---------------:|--------------:|------------------:|
-| 0-4                |        424.718 |               14.2706 |         28.754  |        27.4005 |       84.6067 |           32.1605 |
-| 10-14              |        537.951 |               17.2434 |         42.515  |        33.4009 |       83.1856 |           41.1414 |
-| 20-24              |        706.739 |               19.9892 |         65.6583 |        55.3213 |       79.5605 |           56.355  |
-| 30-34              |       1319.31  |               35.6863 |         94.0392 |       105.882  |      150.098  |          122.118  |
-| 40-44              |        810.333 |               20      |        113.333  |        40.3333 |      124      |           56.3333 |
+| 0-9                |        424.793 |               14.2776 |         28.7566 |        27.4052 |       84.6468 |           32.1586 |
+| 10-19              |        539.225 |               17.2994 |         42.5371 |        33.448  |       83.6886 |           41.2413 |
+| 20-29              |        720.483 |               20.7042 |         65.8122 |        55.4133 |       86.0834 |           57.2432 |
+| 30-39              |       1342.26  |               36.3148 |         99.7037 |       147.667  |      162.593  |          122.648  |
+| 40-49              |        810.333 |               20      |        113.333  |        40.3333 |      124      |           56.3333 |
 
 This pivot table shows average calorie counts grouped by recipe tags. We can see that recipes tagged as TAG1 tend to have HIGHERorLOWER calories than those tagged as TAG2. This helps identify which types of recipes are generally healthier when targeting weight loss.
 
