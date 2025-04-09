@@ -67,7 +67,7 @@ Distribution of Protein
 Distribution of Calories by the Number of Ingredients
 
  <iframe
- src="assests/calorie-dist-by-num-ingredients.html"
+ src="assests/calories-dist-by-num-ingredients.html"
  width="800"
  height="600"
  frameborder="0"
