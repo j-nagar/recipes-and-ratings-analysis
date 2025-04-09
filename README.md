@@ -29,6 +29,7 @@ The number of rows in the dataset is 231637, the number of columns before cleani
   - Carbohydrates (PDV)
 - **`n_steps`**: Number of steps in the recipe preparation process.
 - **`n_ingredients`**: Number of ingredients required for the recipe.
+- **`average_rating`**: Average rating (1-5) for the recipe.
 
 #### **Interactions Dataset**:
 - **`recipe_id`**: Unique identifier for each recipe.
@@ -45,13 +46,13 @@ To clean the data, first the recipes and interactions datasets were merged using
 ```py
 printrecipes.head().to_markdown(index=False))
 ```
-| name                                       |     id |   n_ingredients |   average_rating |   calories (#) |   total_fat (PDV) |   sugar (PDV) |   sodium (PDV) |   protein (PDV) |   saturated_fat (PDV) |   carbohydrates (PDV) |
-|:-------------------------------------------|-------:|----------------:|-----------------:|---------------:|------------------:|--------------:|---------------:|----------------:|----------------------:|----------------------:|
-| arriba   baked winter squash mexican style | 137739 |               7 |          5       |           51.5 |                 0 |            13 |              0 |               2 |                     0 |                     4 |
-| a bit different  breakfast pizza           |  31490 |               6 |          4.66667 |          173.4 |                18 |             0 |             17 |              22 |                    35 |                     1 |
-| all in the kitchen  chili                  | 112140 |              13 |          4       |          269.8 |                22 |            32 |             48 |              39 |                    27 |                     5 |
-| alouette  potatoes                         |  59389 |              11 |          4.5     |          368.1 |                17 |            10 |              2 |              14 |                     8 |                    20 |
-| amish  tomato ketchup  for canning         |  44061 |               8 |          5       |          352.9 |                 1 |           337 |             23 |               3 |                     0 |                    28 |
+| name                                       |   n_ingredients |   average_rating |   calories (#) |   total_fat (PDV) |   sugar (PDV) |   sodium (PDV) |   protein (PDV) |   saturated_fat (PDV) |   carbohydrates (PDV) |
+|:-------------------------------------------|----------------:|-----------------:|---------------:|------------------:|--------------:|---------------:|----------------:|----------------------:|----------------------:|
+| arriba   baked winter squash mexican style |               7 |          5       |           51.5 |                 0 |            13 |              0 |               2 |                     0 |                     4 |
+| a bit different  breakfast pizza           |               6 |          4.66667 |          173.4 |                18 |             0 |             17 |              22 |                    35 |                     1 |
+| all in the kitchen  chili                  |              13 |          4       |          269.8 |                22 |            32 |             48 |              39 |                    27 |                     5 |
+| alouette  potatoes                         |              11 |          4.5     |          368.1 |                17 |            10 |              2 |              14 |                     8 |                    20 |
+| amish  tomato ketchup  for canning         |               8 |          5       |          352.9 |                 1 |           337 |             23 |               3 |                     0 |                    28 |
 ### Univariate Analysis
 
 **Distribution of Calories**
