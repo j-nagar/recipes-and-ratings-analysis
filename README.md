@@ -16,7 +16,7 @@ This project analyzes the ‘Recipes and Ratings’ dataset from food.com, which
 The project is centered around the question: “What types of recipes tend to be healthier, or in other words what types of recipes tend to have a lower calorie count?” This is an important question to evaluate because with increasing awareness about health and nutrition, many people are seeking healthier recipe options to support their lifestyle. Understanding what components relate to a recipe being lower in calories can help individuals make better dietary choices. This analysis aims to identify key recipe factors, such as preparation time, number of ingredients, and nutritional components, that affect the total calorie count of a recipe. 
 
 ### Dataset Information 
-MAKE EDITS The number of rows in the dataset before cleaning is BLANK, and the number of rows in the dataset after cleaning is BLANK. The relevant column names and decriptions to our analysis are as follows: 
+The number of rows in the dataset is 231637, the number of columns before cleaning is 12 and after cleaning was 15. The relevant column names and decriptions to our analysis are as follows: 
 
 #### **Recipes Dataset**:
 - **`name`**: Recipe name.
@@ -45,7 +45,42 @@ MAKE EDITS The number of rows in the dataset before cleaning is BLANK, and the n
 
 ### Univariate Analysis
 
+ <iframe
+ src="assets/calorie-dist.html"
+ width="800"
+ height="600"
+ frameborder="0"
+ ></iframe>
+
+ <iframe
+ src="assets/protein-dist.html"
+ width="800"
+ height="600"
+ frameborder="0"
+ ></iframe>
+
 ### Bivariate Analysis
+
+ <iframe
+ src="assets/calorie-dist-by-num-ingredients.html"
+ width="800"
+ height="600"
+ frameborder="0"
+ ></iframe>
+
+ <iframe
+ src="assets/satfat-dist-by-calories"
+ width="800"
+ height="600"
+ frameborder="0"
+ ></iframe>
+
+ <iframe
+ src="assets/carbs-dist-by-calories"
+ width="800"
+ height="600"
+ frameborder="0"
+ ></iframe>
 
 ### Interesting Aggregates
 
