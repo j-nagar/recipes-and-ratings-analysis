@@ -46,17 +46,17 @@ The number of rows in the dataset is 231637, the number of columns before cleani
 Distribution of Calories
 
  <iframe
- src="assets/calorie-dist.html"
+ src="assests/calorie-dist.html"
  width="800"
  height="600"
  frameborder="0"
  ></iframe>
-
+ 
 
 Distribution of Protein
 
  <iframe
- src="assets/protein-dist.html"
+ src="assests/protein-dist.html"
  width="800"
  height="600"
  frameborder="0"
@@ -67,7 +67,7 @@ Distribution of Protein
 Distribution of Calories by the Number of Ingredients
 
  <iframe
- src="assets/calorie-dist-by-num-ingredients.html"
+ src="assests/calorie-dist-by-num-ingredients.html"
  width="800"
  height="600"
  frameborder="0"
@@ -77,7 +77,7 @@ Distribution of Calories by the Number of Ingredients
 Distribution of Saturated Fat by Calories
 
  <iframe
- src="assets/satfat-dist-by-calories"
+ src="assests/satfat-dist-by-calories"
  width="800"
  height="600"
  frameborder="0"
@@ -87,7 +87,7 @@ Distribution of Saturated Fat by Calories
 Distribution of Carbohydrates Fat by Calories
 
  <iframe
- src="assets/carbs-dist-by-calories"
+ src="assests/carbs-dist-by-calories"
  width="800"
  height="600"
  frameborder="0"
