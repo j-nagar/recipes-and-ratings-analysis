@@ -1,7 +1,6 @@
 # Calorie Counter
-by Jamila Nagarwala and Mehek Gupta (jnagar@umich.edu and mehekgup@umich.edu)
-
-Final Project for UMich EECS 398 WN 25 using Recipes and Ratings Dataset 
+by Jamila Nagarwala and Mehek Gupta 
+jnagar@umich.edu and mehekgup@umich.edu
 
 ---
 
@@ -57,7 +56,7 @@ printrecipes.head().to_markdown(index=False))
 
 ### Univariate Analysis
 
-Distribution of Calories
+**Distribution of Calories**
 
  <iframe
  src="assests/calorie-dist.html"
@@ -69,7 +68,7 @@ Distribution of Calories
 This histogram, which shows the distribution of the number of calories across all recipes that are 3000 calories or lower, in order to eliminate extreme outliers, stipulates that the majority of the recipes fall in the 0 to 500 calories range, with a peak at around 150 to 170 calories. This right skewed distribution indicates that while most recipes are moderately low in calories, there still exists a long tail of higher calorie recipes, which helps us understand what is considered a relatively “low-calorie” recipe in terms of this dataset.
 
 
-Distribution of Protein
+**Distribution of Protein**
 
  <iframe
  src="assests/protein-dist.html"
@@ -78,9 +77,12 @@ Distribution of Protein
  frameborder="0"
  ></iframe>
 
+This histogram, which shows the distribution of the protein amount by PDV across all recipes that are 150% PDV or lower, in order to eliminate extreme outliers, stipulates that the main peak of the recipes fall in the 10% to 15% PDV range (~16000 recipes), with a secondary peak at around 25% to 30% PDV (~12000 recipes), and the majority of the recipes (95% of them) fall in the 5% to 50% PDV range. This right skewed distribution indicates that most recipes are relatively low to moderate in protein, but there still exists a long tail of higher protein recipes.
+
+
 ### Bivariate Analysis
 
-Distribution of Calories by the Number of Ingredients
+**Distribution of Calories by the Number of Ingredients**
 
  <iframe
  src="assests/calories-dist-by-num-ingredients.html"
@@ -92,7 +94,7 @@ Distribution of Calories by the Number of Ingredients
 ADD DETAIL This box plot examines the relationship between calorie count and the number of ingredients. We observe FILL IN. This suggests that ingredient count isn’t an ideal predictor of calorie content in a recipe.
 
 
-Distribution of Saturated Fat by Calories
+**Distribution of Saturated Fat by Calories**
 
 <iframe
  src="assests/satfat-dist-by-calories-scatter.html"
@@ -109,6 +111,8 @@ The scatter plot illustrates the distribution of saturated fat (PDV) by calories
  height="600"
  frameborder="0"
  ></iframe>
+
+The box plot is used to address the overplotting issue observed in the scatter plot and displays the distribution of saturated fat (PDV) across different calorie ranges. The graph shows a clear trend: recipes with higher calorie counts generally have higher saturated fat values.
 
 ### Interesting Aggregates
 
@@ -203,3 +207,4 @@ This is a **poor baseline model**, as it has a low explantory power (low R² sco
 
 
 ---
+Final Project for UMich EECS 398 WN 25 using Recipes and Ratings Dataset 
