@@ -128,7 +128,7 @@ print(pivot_table.to_markdown(index=False))
 | 20-29              |        720.483 |               20.7042 |         65.8122 |        55.4133 |       86.0834 |           57.2432 |
 | 30-39              |       1342.26  |               36.3148 |         99.7037 |       147.667  |      162.593  |          122.648  |
 
-This pivot table shows average calorie counts grouped by recipe tags. We can see that recipes tagged as TAG1 tend to have HIGHERorLOWER calories than those tagged as TAG2. This helps identify which types of recipes are generally healthier when targeting weight loss.
+This pivot table displays nutritional information for different ranges of ingredient counts. The data is filtered to include only recipes with 40 or fewer ingredients and is grouped into intervals of 10 ingredients. From the pivot table, we observe that recipes with more ingredients generally have higher average calorie counts and nutritional values. This allows us to identify which recipes are typically healthier, based on their lower calorie content.
 
 ### Imputation
 
