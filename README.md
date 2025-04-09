@@ -41,6 +41,8 @@ The number of rows in the dataset is 231637, the number of columns before cleani
 
 ### Data Cleaning
 
+To clean the data, first the recipes and interactions datasets were merged using a left merge. Then, the ratings of ‘0’ were replaced with NaN, since the rating scale was from 1 to 5, and the ratings of ‘0’ were likely missing data. Next, nutritional information was extracted from the ‘nutrition’ column into separate columns for calories, fat, sugar, sodium, protein, etc. Then, the average ratings per recipe was calculated and added as a new column to the dataframe. The missing values were handled but not imputing them since there was no accurate and reliable way to estimate them. INSERT DF
+
 ### Univariate Analysis
 
 Distribution of Calories
@@ -51,7 +53,9 @@ Distribution of Calories
  height="600"
  frameborder="0"
  ></iframe>
- 
+
+ADD DETAIL This histogram shows the distribution of the number of calories across all recipes. It can be seen that most recipes fall in the 0 to 500 calories, with the histogram having a right skew. This helps us understand what is relatively considered a “low-calorie” recipe in terms of this dataset.
+
 
 Distribution of Protein
 
@@ -72,6 +76,8 @@ Distribution of Calories by the Number of Ingredients
  height="600"
  frameborder="0"
  ></iframe>
+
+ADD DETAIL This box plot examines the relationship between calorie count and the number of ingredients. We observe FILL IN. This suggests that ingredient count isn’t an ideal predictor of calorie content in a recipe.
 
 
 Distribution of Saturated Fat by Calories
@@ -95,9 +101,23 @@ Distribution of Carbohydrates Fat by Calories
 
 ### Interesting Aggregates
 
+```py
+print(pivot_table.to_markdown(index=False))
+```
+
+| ingredient_range   |   calories (#) |   carbohydrates (PDV) |   protein (PDV) |   sodium (PDV) |   sugar (PDV) |   total_fat (PDV) |
+|:-------------------|---------------:|----------------------:|----------------:|---------------:|--------------:|------------------:|
+| 0-4                |        424.718 |               14.2706 |         28.754  |        27.4005 |       84.6067 |           32.1605 |
+| 10-14              |        537.951 |               17.2434 |         42.515  |        33.4009 |       83.1856 |           41.1414 |
+| 20-24              |        706.739 |               19.9892 |         65.6583 |        55.3213 |       79.5605 |           56.355  |
+| 30-34              |       1319.31  |               35.6863 |         94.0392 |       105.882  |      150.098  |          122.118  |
+| 40-44              |        810.333 |               20      |        113.333  |        40.3333 |      124      |           56.3333 |
+
+This pivot table shows average calorie counts grouped by recipe tags. We can see that recipes tagged as TAG1 tend to have HIGHERorLOWER calories than those tagged as TAG2. This helps identify which types of recipes are generally healthier when targeting weight loss.
+
 ### Imputation
 
-
+Missing rating values were not imputed because the ratings of ‘0’ were invalid due to the rating scale being 1-5, there was no reliable way to estimate missing ratings, and the missing ratings were likely missing at random. So these recipes didn’t skew the analysis, ratings of ‘0’ were imputed with NaN.
 ```py
 print(counts[['Quarter', 'Count']].head().to_markdown(index=False))
 ```
