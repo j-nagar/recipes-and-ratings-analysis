@@ -44,8 +44,9 @@ The number of rows in the dataset is 231637, the number of columns before cleani
 To clean the data, first the recipes and interactions datasets were merged using a left merge. Then, the ratings of ‘0’ were replaced with NaN, since the rating scale was from 1 to 5, and the ratings of ‘0’ were likely missing data. Next, nutritional information was extracted from the ‘nutrition’ column into separate columns for calories, fat, sugar, sodium, protein, etc. Then, the average ratings per recipe was calculated and added as a new column to the dataframe. The missing values were handled but not imputing them since there was no accurate and reliable way to estimate them. 
 
 ```py
-printrecipes.head().to_markdown(index=False))
+print(recipes.head().to_markdown(index=False))
 ```
+
 | name                                       |   n_ingredients |   average_rating |   calories (#) |   total_fat (PDV) |   sugar (PDV) |   sodium (PDV) |   protein (PDV) |   saturated_fat (PDV) |   carbohydrates (PDV) |
 |:-------------------------------------------|----------------:|-----------------:|---------------:|------------------:|--------------:|---------------:|----------------:|----------------------:|----------------------:|
 | arriba   baked winter squash mexican style |               7 |          5       |           51.5 |                 0 |            13 |              0 |               2 |                     0 |                     4 |
@@ -53,6 +54,8 @@ printrecipes.head().to_markdown(index=False))
 | all in the kitchen  chili                  |              13 |          4       |          269.8 |                22 |            32 |             48 |              39 |                    27 |                     5 |
 | alouette  potatoes                         |              11 |          4.5     |          368.1 |                17 |            10 |              2 |              14 |                     8 |                    20 |
 | amish  tomato ketchup  for canning         |               8 |          5       |          352.9 |                 1 |           337 |             23 |               3 |                     0 |                    28 |
+
+
 ### Univariate Analysis
 
 **Distribution of Calories**
