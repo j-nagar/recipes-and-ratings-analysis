@@ -45,6 +45,7 @@ To clean the data, first the recipes and interactions datasets were merged using
 ```py
 printrecipes.head().to_markdown(index=False))
 ```
+<font size="2">
 
 | name                                       |     id |   minutes | nutrition                                  |   n_steps | ingredients                                                                                                                                                                                       |   n_ingredients |   average_rating |   calories (#) |   total_fat (PDV) |   sugar (PDV) |   sodium (PDV) |   protein (PDV) |   saturated_fat (PDV) |   carbohydrates (PDV) |
 |:-------------------------------------------|-------:|----------:|:-------------------------------------------|----------:|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------:|-----------------:|---------------:|------------------:|--------------:|---------------:|----------------:|----------------------:|----------------------:|
