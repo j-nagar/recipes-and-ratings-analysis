@@ -216,16 +216,16 @@ The final model uses additional engineered features in order to better predict t
 
 ### Features
 1. **Quantitative Features**:
-   - `protein (PDV)`: Protein content in Percent Daily Value (PDV%).
    - `number of ingredients`: the number of ingredients in the recipe.
-   - `sugar (PDV)`: Sugar content in Percent Daily Value (PDV%).
-   - `carbohydrates (PDV)`: Carbohydrates content in Percent Daily Value (PDV%).
+   - `sodium (PDV)`: Sodium  content in Percent Daily Value (PDV%).
    - `total_fat (PDV)`: Total fat content in Percent Daily Value (PDV%).
 
 2. **Engineered Features**:
-    - `protein_to_fat_ratio (PDV)`: This feature captures the ratio of protein to fat content in a recipe. This is a good engineered feature since fat contains more calories per gram (9 cal/g) compared to protein (4 cal/g). Therefore, a higher protein-to-fat ratio often correlates with a lower overall calorie density,  helping to predict calorie content more accurately.
+    - `protein_to_fat_ratio`: This feature captures the ratio of protein to fat content in a recipe. This is a good engineered feature since fat contains more calories per gram (9 cal/g) compared to protein (4 cal/g). Therefore, a higher protein-to-fat ratio often correlates with a lower overall calorie density,  helping to predict calorie content more accurately.
    
-    - `carbs_to_fat_ratio (PDV)`: This feature captures the ratio of carbohydrates to fat content in a recipe. This is a good engineered feature since fat contains more calories per gram (9 cal/g) compared to carbohydrates (4 cal/g). Therefore, a higher carbohydrates-to-fat ratio often correlates with a lower overall calorie density, helping to predict calorie content more accurately.
+    - `carbs_to_fat_ratio`: This feature captures the ratio of carbohydrates to fat content in a recipe. This is a good engineered feature since fat contains more calories per gram (9 cal/g) compared to carbohydrates (4 cal/g). Therefore, a higher carbohydrates-to-fat ratio often correlates with a lower overall calorie density, helping to predict calorie content more accurately.
+  
+    -`log_sugar` The log transformation addresses skewness in sugar distribution, making relationships between sugar and calorie content more linear and manageable for regression.
 
 3. **Response Variable**:
    - `calories`: Calorie content, the response variable, measured as a continuous quantitative value.
@@ -233,22 +233,22 @@ The final model uses additional engineered features in order to better predict t
 ### Modeling Algorithim
 
 ### Best Hyperparameters
-After using the grid search algorithim, the best parameters were:
+Through GridSearchCV, the optimal hyperparameter configuration was found to be:
 - `alpha`: 0.1
   
 ### Model Performance
 
 1. **Mean Squared Error (MSE)**:
-   - Train MSE: **1557.698**
-   - Test MSE: **1319.685**
+   - Train MSE: **1559.237**
+   - Test MSE: **1321.407**
      
-   - **Interpretation**: .
+   - **Interpretation**: The train and test MSE values indicate the average squared difference between the predicted and actual calorie values. The relatively low MSE on both sets suggests the model's predictions are precise and that it generalizes well to unseen data.
 
 2. **R² Score (Coefficient of Determination)**:
-   - Train R²: **0.9894.**
-   - Test R²: **0.991**
+   - Train R²: **0.9894**
+   - Test R²: **0.9911**
   
-   - **Interpretation**: The model explains only ~99% of the variance in calorie values.
+   - **Interpretation**: The model explains only ~99% of the variance in calorie values. This high degree of variance explanation suggests that the model captures the underlying relationships between the input features and calorie content effectively.
 
 
 ---
