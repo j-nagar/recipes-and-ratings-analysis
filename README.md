@@ -224,13 +224,25 @@ The final model uses additional engineered features in order to better predict t
     - `protein_to_fat_ratio`: This feature captures the ratio of protein to fat content in a recipe. This is a good engineered feature since fat contains more calories per gram (9 cal/g) compared to protein (4 cal/g). Therefore, a higher protein-to-fat ratio often correlates with a lower overall calorie density,  helping to predict calorie content more accurately.
    
     - `carbs_to_fat_ratio`: This feature captures the ratio of carbohydrates to fat content in a recipe. This is a good engineered feature since fat contains more calories per gram (9 cal/g) compared to carbohydrates (4 cal/g). Therefore, a higher carbohydrates-to-fat ratio often correlates with a lower overall calorie density, helping to predict calorie content more accurately.
+    - `log_sugar` The log transformation addresses skewness in sugar distribution, making relationships between sugar and calorie content more linear and manageable for regression.
   
-    -`log_sugar` The log transformation addresses skewness in sugar distribution, making relationships between sugar and calorie content more linear and manageable for regression.
+These features likely improve model performance as they help to capture more complex relationships between macronutrient compositions and the target variable.
 
 3. **Response Variable**:
    - `calories`: Calorie content, the response variable, measured as a continuous quantitative value.
   
+### Preprocessing 
+- FunctionTransformer: Custom function compute_ratios_log is used to compute additional features: Protein to Fat Ratio, Carbs to Fat Ratio: , Log Sugar: 
+
+- PolynomialFeatures: Applied with degree=2 and interaction_only=True to generate interaction terms among input features. This captures the combined effects of features, enabling the model to learn more complex patterns.
+Scaling:
+
+- StandardScaler: Standardizes features by removing the mean and scaling to unit variance. Essential for ensuring that features contribute equally in the Lasso regression model.
+
 ### Modeling Algorithim
+- Lasso Regression: used to simplify models by L1 regularization, effectively performing feature selection and managing multicollinearity.
+   - Lasso can perform feature selection by driving some coefficients to zero, which simplifies the model.
+   - It helps with datasets where features are highly correlated, slightly reducing variance in model prediction.
 
 ### Best Hyperparameters
 Through GridSearchCV, the optimal hyperparameter configuration was found to be:
@@ -242,7 +254,7 @@ Through GridSearchCV, the optimal hyperparameter configuration was found to be:
    - Train MSE: **1559.237**
    - Test MSE: **1321.407**
      
-   - **Interpretation**: The train and test MSE values indicate the average squared difference between the predicted and actual calorie values. The relatively low MSE on both sets suggests the model's predictions are precise and that it generalizes well to unseen data.
+   - **Interpretation**: The train and test MSE values indicate the average squared difference between the predicted and actual calorie values. The relatively low MSE on both the training and test sets indicate that the model's predictions are more accurate than the baseline and that it generalizes well to unseen data.
 
 2. **R² Score (Coefficient of Determination)**:
    - Train R²: **0.9894**
