@@ -39,9 +39,16 @@ The number of rows in the dataset is 231637, the number of columns before cleani
 
 ## Data Cleaning and Exploratory Data Analysis
 
-### Data Cleaning
+### Data Cleaning 
 
-To clean the data, first the recipes and interactions datasets were merged using a left merge. Then, the ratings of ‘0’ were replaced with NaN, since the rating scale was from 1 to 5, and the ratings of ‘0’ were likely missing data. Next, nutritional information was extracted from the ‘nutrition’ column into separate columns for calories, fat, sugar, sodium, protein, etc. Then, the average ratings per recipe was calculated and added as a new column to the dataframe. The missing values were handled but not imputing them since there was no accurate and reliable way to estimate them. 
+1. In the merged dataset, the ratings of ‘0’ were filled with NaN, since the rating scale was from 1 to 5, which does not include the value of 0. The recipes with ratings of ‘0’ had missing rating data. 
+   
+2. Nutritional information was extracted from the ‘nutrition’ column into separate columns for calories, fat, sugar, sodium, protein, etc.
+ 
+3. The average rating per recipe was calculated and added as a new column to the dataframe (as a Series). This resulting data was used for the project’s analysis.
+   
+4. The missing values were handled by not imputing them since there was no accurate and reliable way to estimate them.
+
 
 ```py
 print(recipes.head().to_markdown(index=False))
