@@ -224,6 +224,7 @@ The final model uses additional engineered features in order to better predict t
     - `protein_to_fat_ratio`: This feature captures the ratio of protein to fat content in a recipe. This is a good engineered feature since fat contains more calories per gram (9 cal/g) compared to protein (4 cal/g). Therefore, a higher protein-to-fat ratio often correlates with a lower overall calorie density,  helping to predict calorie content more accurately.
    
     - `carbs_to_fat_ratio`: This feature captures the ratio of carbohydrates to fat content in a recipe. This is a good engineered feature since fat contains more calories per gram (9 cal/g) compared to carbohydrates (4 cal/g). Therefore, a higher carbohydrates-to-fat ratio often correlates with a lower overall calorie density, helping to predict calorie content more accurately.
+  
     - `log_sugar` The log transformation addresses skewness in sugar distribution, making relationships between sugar and calorie content more linear and manageable for regression.
   
 These features likely improve model performance as they help to capture more complex relationships between macronutrient compositions and the target variable.
