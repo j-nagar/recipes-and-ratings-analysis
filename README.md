@@ -232,8 +232,8 @@ These features likely improve model performance as they help to capture more com
    - `calories`: Calorie content, the response variable, measured as a continuous quantitative value.
   
 ### Preprocessing 
-- FunctionTransformer: Custom function compute_ratios_log is used to compute additional features: Protein to Fat Ratio, Carbs to Fat Ratio: , Log Sugar: 
-
+- FunctionTransformer: Custom function compute_ratios_log is used to compute additional features: Protein to Fat Ratio, Carbs to Fat Ratio, Log Sugar
+  
 - PolynomialFeatures: Applied with degree=2 and interaction_only=True to generate interaction terms among input features. This captures the combined effects of features, enabling the model to learn more complex patterns.
 Scaling:
 
@@ -261,6 +261,11 @@ Through GridSearchCV, the optimal hyperparameter configuration was found to be:
    - Test R²: **0.9911**
   
    - **Interpretation**: The model explains only ~99% of the variance in calorie values. This high degree of variance explanation suggests that the model captures the underlying relationships between the input features and calorie content effectively.
+
+### Final Model Improvement from Baseline
+
+The final model uses the engineered features and Lasso with cross-validation to identify optimal hyperparameters.
+The baseline model was a simple linear regression model without feature engineering and parameter tuning. The improvements in the model are  due to the increased complexity of the final model and the addition of features. By comparing mean squared errors (MSE) and R² scores between the training and test sets for both models, the final model shows a decrease in MSE and an increase in R², indicating better fit and generalization to unseen data.
 
 
 ---
