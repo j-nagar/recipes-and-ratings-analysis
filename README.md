@@ -194,7 +194,7 @@ The baseline model is a Linear Regression model that predicts the calorie conten
      
 **Interpretation**: The model's predictions differ significantly from the actual calorie values, suggesting that this basic model has difficulty accounting for the variability in calorie content.
 
-2. **R² Score (Coefficient of Determination)**:
+2.  **R² Score (Coefficient of Determination)**:
    - Train R²: **0.3656**
    - Test R²: **0.3749**
   
