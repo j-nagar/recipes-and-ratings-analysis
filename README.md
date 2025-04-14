@@ -222,7 +222,7 @@ The final model uses additional engineered features in order to better predict t
   
     - `log_sugar` The log transformation addresses skewness in sugar distribution, making relationships between sugar and calorie content more linear and manageable for regression.
   
-These features likely improve model performance as they help to capture more complex relationships between macronutrient compositions and the target variable.
+    These features likely improve model performance as they help to capture more complex relationships between macronutrient compositions and the target variable.
 
 3. **Response Variable**:
    - `calories`: Calorie content, the response variable, measured as a continuous quantitative value.
@@ -250,13 +250,13 @@ Through GridSearchCV, the optimal hyperparameter configuration was found to be:
    - Train MSE: **1559.237**
    - Test MSE: **1321.407**
      
-**Interpretation**: The train and test MSE values indicate the average squared difference between the predicted and actual calorie values. The relatively low MSE on both the training and test sets indicate that the model's predictions are more accurate than the baseline and that it generalizes well to unseen data.
+   **Interpretation**: The train and test MSE values indicate the average squared difference between the predicted and actual calorie values. The relatively low MSE on both the training and test sets indicate that the model's predictions are more accurate than the baseline and that it generalizes well to unseen data.
 
 2. **R² Score (Coefficient of Determination)**:
    - Train R²: **0.9894**
    - Test R²: **0.9911**
   
-**Interpretation**: The model explains only ~99% of the variance in calorie values. This high degree of variance explanation suggests that the model captures the underlying relationships between the input features and calorie content effectively.
+   **Interpretation**: The model explains only ~99% of the variance in calorie values. This high degree of variance explanation suggests that the model captures the underlying relationships between the input features and calorie content effectively.
 
 ### Final Model Improvement from Baseline
 
