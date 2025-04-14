@@ -154,10 +154,12 @@ This is a regression problem since calorie count is a continuous numerical varia
 The **response variable** is calories, which was extracted from the ‘nutrition’ column. This was chosen as the response variable because number of calories in a recipe can be used to answers the initial question about which recipes tend to be healthier. 
 
 **Features**
-  - `protein`: Protein content (PDV%).
-  - `sugar`: Sugar content (PDV%).
-  - `carbohydrates`: Carbohydrate content (PDV%).
-    
+  - `protein`: Protein content (PDV)
+  - `sugar`: Sugar content (PDV)
+  - `carbohydrates`: Carbohydrate content (PDV)
+  - `n_ingredients`:
+  - `total_fat`: Total fat content (PDV)
+
 **Relevance**: The selected features directly relate to key nutritional factors influencing calorie content.
 
 **Availability**: These features are always available at the time of prediction, as they are from a recipe’s nutritional information. The information known at the “time of prediction” include number of ingredients, preparation time, and nutritional components that may correlate with calories.
@@ -181,13 +183,7 @@ The baseline model is a Linear Regression model that predicts the calorie conten
    - Both features are numerical, therefore they require no special encoding but required standardization. Both feature weere standardized
      using `StandardScaler` to make the values comparable, as linear regression models are sensitive to the magnitude of features.
 
-2. **Ordinal Features**:
-   - N/A
-
-3. **Nominal Features**:
-   - N/A
-
-4. **Response Variable**:
+2. **Response Variable**:
    - `calories`: Calorie content, the response variable, measured as a continuous quantitative value.
   
 ### Model Performance
@@ -196,13 +192,13 @@ The baseline model is a Linear Regression model that predicts the calorie conten
    - Train MSE: **93680.658**
    - Test MSE: **93217.755**
      
-   - **Interpretation**: The model's predictions differ significantly from the actual calorie values, suggesting that this basic model has difficulty accounting for the variability in calorie content.
+**Interpretation**: The model's predictions differ significantly from the actual calorie values, suggesting that this basic model has difficulty accounting for the variability in calorie content.
 
 2. **R² Score (Coefficient of Determination)**:
    - Train R²: **0.3656**
    - Test R²: **0.3749**
   
-   - **Interpretation**: The model explains only ~37% of the variance in calorie values.
+**Interpretation**: The model explains only ~37% of the variance in calorie values.
 
 ### Is This a Good Baseline Model?
 
@@ -217,7 +213,6 @@ The final model uses additional engineered features in order to better predict t
 ### Features
 1. **Quantitative Features**:
    - `number of ingredients`: the number of ingredients in the recipe.
-   - `sodium (PDV)`: Sodium  content in Percent Daily Value (PDV%).
    - `total_fat (PDV)`: Total fat content in Percent Daily Value (PDV%).
 
 2. **Engineered Features**:
@@ -256,7 +251,6 @@ Through GridSearchCV, the optimal hyperparameter configuration was found to be:
    - Test MSE: **1321.407**
      
 **Interpretation**: The train and test MSE values indicate the average squared difference between the predicted and actual calorie values. The relatively low MSE on both the training and test sets indicate that the model's predictions are more accurate than the baseline and that it generalizes well to unseen data.
-
 
 2. **R² Score (Coefficient of Determination)**:
    - Train R²: **0.9894**
