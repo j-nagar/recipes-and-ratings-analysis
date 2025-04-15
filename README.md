@@ -238,17 +238,17 @@ Scaling:
 ### Modeling Algorithim
 - Lasso Regression: used to simplify models by L1 regularization, effectively performing feature selection and managing multicollinearity.
    - Lasso can perform feature selection by driving some coefficients to zero, which simplifies the model.
-   - It helps with datasets where features are highly correlated, slightly reducing variance in model prediction.
+   - It helps with datasets where features are highly correlated, reducing variance in model prediction and overfitting. 
 
 ### Best Hyperparameters
 Through GridSearchCV, the optimal hyperparameter configuration was found to be:
-- `alpha`: 0.1
+- `lambda/alpha`: 0.1
   
 ### Model Performance
 
 1. **Mean Squared Error (MSE)**:
-   - Train MSE: **1559.237**
-   - Test MSE: **1321.407**
+   - Train MSE: **1560.999**
+   - Test MSE: **1323.506**
      
    **Interpretation**: The train and test MSE values indicate the average squared difference between the predicted and actual calorie values. The relatively low MSE on both the training and test sets indicate that the model's predictions are more accurate than the baseline and that it generalizes well to unseen data.
 
