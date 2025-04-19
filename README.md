@@ -27,13 +27,7 @@ The number of rows in the dataset is 231637, the number of columns before cleani
   - Protein (PDV)
   - Saturated fat (PDV)
   - Carbohydrates (PDV)
-- **`n_steps`**: Number of steps in the recipe preparation process.
 - **`n_ingredients`**: Number of ingredients required for the recipe.
-- **`average_rating`**: Average rating (1-5) for the recipe.
-
-#### **Interactions Dataset**:
-- **`recipe_id`**: Unique identifier for each recipe.
-- **`rating`**: User-provided rating for the recipe (from 1 to 5).
 
 ---
 
