@@ -171,18 +171,18 @@ The evaluation metric is **Mean Squared Error (MSE)**. This was chosen because i
 ## Baseline Model
 
 ### Model Description 
-The baseline model is a Linear Regression model that predicts the calorie content of a recipe based on two quantitative features that are directly related to calories: protein content (PDV) and number of ingredients. 
+The baseline model is a Linear Regression model that predicts the calorie content of a recipe based on two quantitative features that are  related to calories: protein content (PDV) and number of ingredients. 
 
 ### Features
 1. **Quantitative Features**:
    - `protein (PDV)`: Protein content in Percent Daily Value (PDV%).
-   - `number of ingredients`: the number of ingredients in the recipe.
+   - `number of ingredients`: The number of ingredients in the recipe.
    - Protein is a quantiatvie continuous feature, while number of ingredients is a quantitative discrete feature. 
-   - Both features are numerical, therefore they require no special encoding but required standardization. Both feature weere standardized
-     using `StandardScaler` to make the values comparable, as linear regression models are sensitive to the magnitude of features.
+   - Both features are numerical, therefore they require no special encoding but required standardization. Both feature were standardized
+     using `StandardScaler` to make the values comparable, as linear regression models are sensitive to the magnitude of the features.
 
 2. **Response Variable**:
-   - `calories`: Calorie content, the response variable, measured as a continuous quantitative value.
+   - `calories`: Number of calories, the response variable, measured as a continuous quantitative value.
   
 ### Model Performance
 
@@ -200,7 +200,7 @@ The baseline model is a Linear Regression model that predicts the calorie conten
 
 ### Is This a Good Baseline Model?
 
-This is a **poor baseline model**, as it has a low explantory power (low R² score) and prediction accuracy (high MSE). The low R² score suggests that the features chosen (`protein` and `number of ingredients`) are insufficient to predict calories effectively on their own.
+This is a **weak baseline model**, as it has a low explantory power (low R² score) and prediction accuracy (high MSE). The low R² score suggests that the features chosen (`protein` and `number of ingredients`) are insufficient to predict calories effectively on their own and the high MSE suggests that only utilizing `protein` and `number of ingredients` leads to high error, meaning it does not predict calories well.
 
 ---
 
