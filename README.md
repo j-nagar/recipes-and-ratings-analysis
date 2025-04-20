@@ -1,4 +1,4 @@
-# Calorie Counter
+# Calorie Counter: What Impacts a Recipe’s Calorie Count?
 by Jamila Nagarwala and Mehek Gupta 
 jnagar@umich.edu and mehekgup@umich.edu
 
