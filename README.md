@@ -15,18 +15,18 @@ This project analyzes the ‘Recipes and Ratings’ dataset from food.com, which
 The project is centered around the question: **“What types of recipes tend to be healthier, or in other words what types of recipes tend to have a lower calorie count?”** This is an important question to evaluate because with increasing awareness about health and nutrition, many people are seeking healthier recipe options to support their lifestyle. Understanding what components relate to a recipe being lower in calories can help individuals make better dietary choices. This analysis aims to identify key recipe factors, such as preparation time, number of ingredients, and nutritional components, that affect the total calorie count of a recipe. 
 
 ### Dataset Information 
-The number of rows in the dataset is 231637, the number of columns before cleaning is 12 and after cleaning was 15. The relevant column names and decriptions to our analysis are as follows: 
+The number of rows in the dataset is 231637, the number of columns before cleaning is 12 and after cleaning was 15. The relevant column names and descriptions to our analysis are as follows: 
 
 #### **Recipes Dataset**:
 - **`name`**: Recipe name.
 - **`nutrition`**: List of nutritional values: 
-  - Calories (#)
-  - Total fat (PDV)
-  - Sugar (PDV)
-  - Sodium (PDV)
-  - Protein (PDV)
-  - Saturated fat (PDV)
-  - Carbohydrates (PDV)
+  - Calories (#): Number of calories
+  - Total fat (PDV): Total fat content in PDV
+  - Sugar (PDV): Sugar content in PDV
+  - Sodium (PDV): Sodium content in PDV
+  - Protein (PDV): Protein content in PDV
+  - Saturated fat (PDV): Saturated fat content in PDV
+  - Carbohydrates (PDV): Carbohydrate content in PDV
 - **`n_ingredients`**: Number of ingredients required for the recipe.
 
 ---
@@ -35,13 +35,17 @@ The number of rows in the dataset is 231637, the number of columns before cleani
 
 ### Data Cleaning 
 
-1. In the merged dataset, the ratings of ‘0’ were filled with NaN, since the rating scale was from 1 to 5, which does not include the value of 0. The recipes with ratings of ‘0’ had missing rating data. 
+1. The recipes data set was merged with the interaction data set with the 'id' of the recipe. This added the rating columns into the recipe data set.
+
+2. In the merged dataset, the ratings of ‘0’ were filled with NaN, since the rating scale was from 1 to 5, which does not include the value of 0. The recipes with ratings of ‘0’ had missing rating data.
    
-2. Nutritional information was extracted from the ‘nutrition’ column into separate columns for calories, fat, sugar, sodium, protein, etc.
+3. The average rating per recipe was calculated and added as a new column to the dataframe (as a Series).
  
-3. The average rating per recipe was calculated and added as a new column to the dataframe (as a Series). This resulting data was used for the project’s analysis.
+4. Nutritional information was extracted from the ‘nutrition’ column into separate columns for calories, fat, sugar, sodium, protein, etc.
    
-4. The missing values were handled by not imputing them since there was no accurate and reliable way to estimate them.
+5. The missing values were handled by not imputing them since there was no accurate and reliable way to estimate them.
+
+6. Columns unnecessary to our analysis were dropped such as the tag column, ingredient column, minutes column, and more. 
 
 
 ```py
@@ -68,7 +72,7 @@ print(recipes.head().to_markdown(index=False))
  frameborder="0"
  ></iframe>
 
-This histogram, which shows the distribution of the number of calories across all recipes that are 3000 calories or lower, in order to eliminate extreme outliers, stipulates that the majority of the recipes fall in the 0 to 500 calories range, with a peak at around 150 to 170 calories. This right skewed distribution indicates that while most recipes are moderately low in calories, there still exists a long tail of higher calorie recipes, which helps us understand what is considered a relatively “low-calorie” recipe in terms of this dataset.
+This histogram, which shows the distribution of the number of calories across all recipes that are 3000 calories or lower, in order to eliminate extreme outliers, stipulates that the majority of the recipes fall in the 0 to 500 calories range, with a peak at around 150 to 190 calories. This right skewed distribution indicates that while most recipes are moderately low in calories, there still exists a long tail of higher calorie recipes, which helps us understand what is considered a relatively “low-calorie” recipe in terms of this dataset.
 
 
 **Distribution of Protein**
@@ -80,7 +84,7 @@ This histogram, which shows the distribution of the number of calories across al
  frameborder="0"
  ></iframe>
 
-This histogram, which shows the distribution of the protein amount by PDV across all recipes that are 150% PDV or lower, in order to eliminate extreme outliers, stipulates that the main peak of the recipes fall in the 10% to 15% PDV range (~16000 recipes), with a secondary peak at around 25% to 30% PDV (~12000 recipes), and the majority of the recipes (95% of them) fall in the 5% to 50% PDV range. This right skewed distribution indicates that most recipes are relatively low to moderate in protein, but there still exists a long tail of higher protein recipes.
+This histogram, which shows the distribution of the protein amount by PDV across all recipes that are 150% PDV or lower, in order to eliminate extreme outliers, stipulates that the main peak of the recipes fall in the 0% to 7% PDV range (~60,000 recipes), and the majority of the recipes (95% of them) fall in the 5% to 50% PDV range. This right skewed distribution indicates that most recipes are relatively low to moderate in protein, but there still exists a long tail of higher protein recipes.
 
 
 ### Bivariate Analysis
@@ -94,7 +98,7 @@ This histogram, which shows the distribution of the protein amount by PDV across
  frameborder="0"
  ></iframe>
 
-This box plot, which shows the distribution of the number of ingredients across all recipes that are 20 ingredients or lower by the number of calories across all recipes that are 3000 calories or lower, in order to eliminate extreme outliers, shows a trend: recipes with higher ingredient counts generally have higher calorie content.
+This box plot, which shows the distribution of the number of ingredients across all recipes that are 20 ingredients or lower by the number of calories across all recipes that are 3000 calories or lower, in order to eliminate extreme outliers, shows a trend: recipes with higher ingredient counts generally have slightly higher calorie content.
 
 **Distribution of Saturated Fat by Calories**
 
@@ -105,7 +109,7 @@ This box plot, which shows the distribution of the number of ingredients across 
  frameborder="0"
  ></iframe>
 
-The scatter plot illustrates the distribution of saturated fat (PDV) by calories, using a filtered recipe dataset that only recipes that are 3000 calories or lower, in order to eliminate extreme outliers. The plot suffers from overplotting, since there are so many points are on top of one another making it hard to see the general trend.
+The scatter plot illustrates the distribution of saturated fat (PDV) by calories, using a filtered recipe dataset that only contains recipes that are 3000 calories or lower, in order to eliminate extreme outliers. The plot suffers from overplotting, since there are so many points on top of one another making it hard to see the general trend.
 
 <iframe
  src="assests/satfat-dist-by-calories.html"
@@ -114,7 +118,7 @@ The scatter plot illustrates the distribution of saturated fat (PDV) by calories
  frameborder="0"
  ></iframe>
 
-The box plot is used to address the overplotting issue observed in the scatter plot and displays the distribution of saturated fat (PDV) across different calorie ranges, filtered so that only recipes that are 3000 calories or lower, in order to eliminate extreme outliers, are considered. The graph shows a trend: recipes with higher calorie counts generally have higher saturated fat values.
+The box plot is used to address the overplotting issue observed in the scatter plot and displays the distribution of saturated fat (PDV) across different calorie ranges, filtered so that only recipes that are 3000 calories or lower, in order to eliminate extreme outliers, are considered. The graph shows a trend: recipes with higher calorie counts have higher saturated fat values.
 
 ### Interesting Aggregates
 
@@ -129,7 +133,7 @@ print(pivot_table.to_markdown(index=False))
 | 20-29              |        720.483 |               20.7042 |         65.8122 |        55.4133 |       86.0834 |           57.2432 |
 | 30-39              |       1342.26  |               36.3148 |         99.7037 |       147.667  |      162.593  |          122.648  |
 
-This pivot table displays nutritional information for different ranges of ingredient counts. The data is filtered to include only recipes with 40 or fewer ingredients and is grouped into intervals of 10 ingredients. From the pivot table, we observe that recipes with more ingredients generally have higher average calorie counts and nutritional values. This allows us to identify which recipes are typically healthier, based on their lower calorie content.
+This pivot table displays nutritional information for different ranges of ingredient counts. The data is filtered to include only recipes with 40 or fewer ingredients and is grouped into intervals of 10 ingredients. From the pivot table, we observe that recipes with more ingredients generally have higher average calorie counts and nutritional values. This allows us to identify which recipes are typically healthier, based on their lower calorie content and higher nutritional value.
 
 ### Imputation
 
@@ -139,19 +143,19 @@ Missing rating values were not imputed because the ratings of ‘0’ were inval
 
 ## Framing a Prediction Problem
 
-The goal of this analysis is to predict calorie count of recipes based on various features from the dataset. 
+The goal of this analysis is to **predict calorie count of recipes** based on various features from the dataset. 
 
 ### Problem Type
 This is a regression problem since calorie count is a continuous numerical variable, the differences between calorie values can be quantitatively measured, and the goal is to predict precise numerical outcomes. 
 
 ### Response Variable/Features
-The **response variable** is calories, which was extracted from the ‘nutrition’ column. This was chosen as the response variable because number of calories in a recipe can be used to answers the initial question about which recipes tend to be healthier. 
+The **response variable** is calories, which was extracted from the ‘nutrition’ column. This was chosen as the response variable because the number of calories in a recipe can be used to answer the initial question about which recipes tend to be healthier. 
 
 **Features**
   - `protein`: Protein content (PDV)
   - `sugar`: Sugar content (PDV)
   - `carbohydrates`: Carbohydrate content (PDV)
-  - `n_ingredients`:
+  - `n_ingredients`: Number of ingredients required for the recipe.
   - `total_fat`: Total fat content (PDV)
 
 **Relevance**: The selected features directly relate to key nutritional factors influencing calorie content.
