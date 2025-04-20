@@ -166,6 +166,8 @@ The **response variable** is calories, which was extracted from the ‘nutrition
 ### Evaluation Metrics
 The evaluation metric is **Mean Squared Error (MSE)**. This was chosen because it penalizes large errors more heavily, it’s commonly used for regression problems, and the square units match people’s intuitive understanding of calorie differences. We will also use **R² Score** as it explains the proportion of variance in calorie count that can be predicted by the selected feature.
 
+Other possible metrics for regression, such as Mean Absolute Error (MAE) or Root Mean Squared Error (RMSE), were considered but ultimately not used as primary metrics. MAE treats all errors equally and doesn’t emphasize larger deviations, which makes it less sensitive to outliers. RMSE, while interpretable in the same units as the target variable (calories), carries the same penalty characteristics as MSE and would lead to similar conclusions, so we chose to report the simpler MSE for consistency and ease of comparison.
+
 ---
 
 ## Baseline Model
@@ -223,13 +225,12 @@ The final model uses additional engineered features in order to better predict t
     These features likely improve model performance as they help to capture more complex relationships between macronutrient compositions and the target variable.
 
 3. **Response Variable**:
-   - `calories`: Calorie content, the response variable, measured as a continuous quantitative value.
+   - `calories`: Number of calories, the response variable, measured as a continuous quantitative value.
   
 ### Preprocessing 
 - FunctionTransformer: Custom function compute_ratios_log is used to compute additional features: Protein to Fat Ratio, Carbs to Fat Ratio, Log Sugar
   
 - PolynomialFeatures: Applied with degree=2 and interaction_only=True to generate interaction terms among input features. This captures the combined effects of features, enabling the model to learn more complex patterns.
-Scaling:
 
 - StandardScaler: Standardizes features by removing the mean and scaling to unit variance. Essential for ensuring that features contribute equally in the Lasso regression model.
 
@@ -241,6 +242,9 @@ Scaling:
 ### Best Hyperparameters
 Through GridSearchCV, the optimal hyperparameter configuration was found to be:
 - `lambda/alpha`: 0.1
+
+The final model uses the engineered features and Lasso with cross-validation to identify optimal hyperparameters. To tune our Lasso regression model, we used GridSearchCV with 5-fold cross-validation to find the optimal value of alpha, the regularization strength. The search spanned alpha values from 0.1 to 100, and the best-performing value was 0.1, which offered a strong balance between model complexity and overfitting control. This approach ensured the model generalized well to unseen data by minimizing the average MSE across validation folds.
+
   
 ### Model Performance
 
