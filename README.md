@@ -209,7 +209,7 @@ This is a **weak baseline model**, as it has a low explantory power (low R² sco
 
 ## Final Model
 ### Model Description 
-The final model uses additional engineered features in order to better predict the calorie content of a recipe based on multiple nutritional information and number of ingredients. It utilizes a more advanced regression model and hypterunes paramteres to increase its predicitve performance.  
+The final model uses additional engineered features in order to better predict the calorie content of a recipe based on multiple nutritional information and number of ingredients. It utilizes a more advanced regression model and hyper-tunes parameters to increase its predictive performance.  
 
 ### Features
 1. **Quantitative Features**:
@@ -235,7 +235,7 @@ The final model uses additional engineered features in order to better predict t
 
 - StandardScaler: Standardizes features by removing the mean and scaling to unit variance. Essential for ensuring that features contribute equally in the Lasso regression model.
 
-### Modeling Algorithim
+### Modeling Algorithm
 - Lasso Regression: used to simplify models by L1 regularization, effectively performing feature selection and managing multicollinearity.
    - Lasso can perform feature selection by driving some coefficients to zero, which simplifies the model.
    - It helps with datasets where features are highly correlated, reducing variance in model prediction and overfitting. 
