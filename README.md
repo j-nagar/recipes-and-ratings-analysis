@@ -10,7 +10,6 @@ This project analyzes the ‘Recipes and Ratings’ dataset from food.com, which
  1. **Recipes Dataset**: Contains details about recipes, including preparation time, number of ingredients, steps, and nutritional information.
  2. **Interactions Dataset**: Includes user reviews and ratings, providing insights into recipe performance.
 
-
 ### Question/Why It Matters
 The project is centered around the question: **“What types of recipes tend to be healthier, or in other words what types of recipes tend to have a lower calorie count?”** This is an important question to evaluate because with increasing awareness about health and nutrition, many people are seeking healthier recipe options to support their lifestyle. Understanding what components relate to a recipe being lower in calories can help individuals make better dietary choices. This analysis aims to identify key recipe factors, such as preparation time, number of ingredients, and nutritional components, that affect the total calorie count of a recipe. 
 
@@ -120,6 +119,7 @@ The scatter plot illustrates the distribution of saturated fat (PDV) by calories
 
 The box plot is used to address the overplotting issue observed in the scatter plot and displays the distribution of saturated fat (PDV) across different calorie ranges, filtered so that only recipes that are 3000 calories or lower, in order to eliminate extreme outliers, are considered. The graph shows a trend: recipes with higher calorie counts have higher saturated fat values.
 
+
 ### Interesting Aggregates
 
 ```py
@@ -134,6 +134,7 @@ print(pivot_table.to_markdown(index=False))
 | 30-39              |       1342.26  |               36.3148 |         99.7037 |       147.667  |      162.593  |          122.648  |
 
 This pivot table displays nutritional information for different ranges of ingredient counts. The data is filtered to include only recipes with 40 or fewer ingredients and is grouped into intervals of 10 ingredients. From the pivot table, we observe that recipes with more ingredients generally have higher average calorie counts and nutritional values. This allows us to identify which recipes are typically healthier, based on their lower calorie content and higher nutritional value.
+
 
 ### Imputation
 
@@ -244,7 +245,6 @@ Through GridSearchCV, the optimal hyperparameter configuration was found to be:
 - `lambda/alpha`: 0.1
 
 The final model uses the engineered features and Lasso with cross-validation to identify optimal hyperparameters. To tune our Lasso regression model, we used GridSearchCV with 5-fold cross-validation to find the optimal value of alpha, the regularization strength. The search spanned alpha values from 0.1 to 100, and the best-performing value was 0.1, which offered a strong balance between model complexity and overfitting control. This approach ensured the model generalized well to unseen data by minimizing the average MSE across validation folds.
-
   
 ### Model Performance
 
@@ -264,8 +264,8 @@ The final model uses the engineered features and Lasso with cross-validation to 
 
 The baseline model was a simple linear regression model without feature engineering and parameter tuning. The improvements in the model are  due to the increased complexity of the final model, the addition of features, feature engineering, and multiple iterations to find the best hyperparameters. By comparing mean squared errors (MSE) and R² scores between the training and test sets for both models, the final model shows a decrease in MSE and an increase in R², indicating better fit and generalization to unseen data.
 
-**Visualization of Model Performance**
 
+**Visualization of Model Performance**
  <iframe
  src="assests/accuracy-visualization.html"
  width="800"
