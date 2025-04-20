@@ -262,8 +262,7 @@ The final model uses the engineered features and Lasso with cross-validation to 
 
 ### Final Model Improvement from Baseline
 
-The final model uses the engineered features and Lasso with cross-validation to identify optimal hyperparameters.
-The baseline model was a simple linear regression model without feature engineering and parameter tuning. The improvements in the model are  due to the increased complexity of the final model and the addition of features. By comparing mean squared errors (MSE) and R² scores between the training and test sets for both models, the final model shows a decrease in MSE and an increase in R², indicating better fit and generalization to unseen data.
+The baseline model was a simple linear regression model without feature engineering and parameter tuning. The improvements in the model are  due to the increased complexity of the final model, the addition of features, feature engineering, and multiple iterations to find the best hyperparameters. By comparing mean squared errors (MSE) and R² scores between the training and test sets for both models, the final model shows a decrease in MSE and an increase in R², indicating better fit and generalization to unseen data.
 
 **Visualization of Model Performance**
 
