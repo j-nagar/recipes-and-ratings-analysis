@@ -213,8 +213,8 @@ The final model uses additional engineered features in order to better predict t
 
 ### Features
 1. **Quantitative Features**:
-   - `number of ingredients`: the number of ingredients in the recipe.
-   - `total_fat (PDV)`: Total fat content in Percent Daily Value (PDV%).
+   - `number of ingredients`: the number of ingredients in the recipe. Based on our EDA analysis, calories in a recipe tends to increase as number of ingredients increases indicating there is some correlation between the number of ingredients and calories. 
+   - `total_fat (PDV)`: Total fat content in Percent Daily Value (PDV%). Based on our EDA analysis, calories in a recipe tends to increase as total fat content increases indicating there is some correlation between total fat and calories. 
 
 2. **Engineered Features**:
     - `protein_to_fat_ratio`: This feature captures the ratio of protein to fat content in a recipe. This is a good engineered feature since fat contains more calories per gram (9 cal/g) compared to protein (4 cal/g). Therefore, a higher protein-to-fat ratio often correlates with a lower overall calorie density,  helping to predict calorie content more accurately.
